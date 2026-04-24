@@ -2,41 +2,34 @@ export function hello(): string {
   return "world";
 }
 
-class Card {
+export class Card {
   color: number;
-  number: Number;
+  value: Number;
 
   beats(other: Card): boolean {
-
-    if (this.number === other.number) {
-      return false;
+    if (this.value === other.value) {
+      return(this.color > other.color)
+    } else {
+      return(this.value > other.value)
     }
-
   }
 }
 
-enum colorValues {
+export enum colorValues {
   Ass = 14,
   König = 13,
   Ober = 12,
   Under = 11,
-  Banner = 10
+  Banner = 10,
+  Neun = 9,
+  Acht = 8,
+  Sieben = 7,
+  Sechs = 6
 }
 
-enum color {
+export enum color {
   Rosen = 3,
   Schellen = 2,
   Schilten = 2,
   Eicheln = 1,
 }
-
-
-const card1 = new Card();
-card1.number = colorValues.Ass;
-card1.color = color.Rosen
-
-const card2 = new Card();
-card1.number = colorValues.Banner;
-card1.color = color.Schellen
-
-card1.beats(card2)
